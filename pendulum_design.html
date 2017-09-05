@@ -1,0 +1,79 @@
+<html>
+<head>
+<style>
+body {
+    /* center the div */
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    /* give it dimensions */
+    min-height: 10em;
+    width: 50%;
+}
+</style>
+
+ <title>Trent's Inverted Pendulum Project</title>
+
+</head>
+
+<body>
+<b>Reaction Wheel Stabilized Inverted Pendulum</b>
+<p><i>Inspiration</i></p>
+<p>Embed Youtube Video</p>
+<br>
+<p><i>Goals</i></p>
+<p>After seeing that video I wanted to learn more about this reaction wheel stabilized
+system and get some basic experience designing control algorithms. With the added desire
+to brush up on my EE skills I decided to embark on an effort to build the following:<br>
+- reaction wheel stabilization module for inverted pendulums (no swing up)<br>
+- LQR optimal control algorithm with quaternion based attitude specification<br>
+- brushless DC motors for reaction wheel torque<br>
+- battery powered electronics on PCB in small form factor<br>
+<br>
+While performing the initial research I realized there were a <i>few</i> more things I'd need
+to learn:<br>
+- physics simulation in software<br>
+- state space representation of equations<br>
+- optimal control theory<br>
+- motor selection<br>
+- brushless DC motor control<br>
+- C++ (or a least a major refresher)<br>
+- CAD design<br>
+- machining of parts<br>
+<br>
+With a strong will, open source software, access to research papers, and a friend with
+a machine shop I got started...</p>
+<br>
+
+<p><i>Controller Design</i></p>
+<p>I performed this part in two stages: (1) single rotation axis with euler angles and
+(2) full three axis control with quaternions. Each control algorthim utilized an LQR 
+controller. In the first stage I wrote my first LQR controller and simulated the physics
+in 2D space. Adapting some code by [link]toddisfleet, I was able to create a visualization of 
+the inverted pendulum and the one reaction wheel that stabilized it.
+<br>
+[link to clip]
+<br>
+<br>
+The next stage was implementing 3-axis stabilization using quaternions and LQR controller.
+Particularly useful in [Yang 2010] was the reduction of number of quaternions from 4 
+terms to 3 terms and a few linearizations. The simulation below shows a top-down view of the
+inverted pendulum recovering from an initial offset.
+<br>
+[link to clip]<br>
+<br>
+See python code for parameter estimation used in the above simulation.
+</p>
+<br>
+
+<p><i>Hardware Selection</i></p>
+<p>
+Motor<br>
+Motor Drive<br>
+Sensors<br>
+Microprocessor<br>
+Others<br>
+</p>
+</body>
+</html>
