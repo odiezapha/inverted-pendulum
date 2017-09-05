@@ -97,7 +97,7 @@ x1_timeline.axis([
 x1_timeline.set_ylabel('Theta (Rad)')
 x1_timeline.set_xlabel('Seconds')
 x1_timeline.yaxis.set_label_position("right")
-x1_timeline.plot(data[:,0],data[:,1],'r-')
+x1_timeline.plot(data[:,0],data[:,1],'g-')
 
 cart_plot = plt.subplot2grid(
     (18, 12),

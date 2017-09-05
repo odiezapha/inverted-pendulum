@@ -129,7 +129,7 @@ x1_timeline.axis([
     ])
 x1_timeline.set_ylabel('Theta_x')
 x1_timeline.yaxis.set_label_position("right")
-x1_timeline.plot(data[:,0],data[:,12],'c-')
+x1_timeline.plot(data[:,0],data[:,12],'g-')
 
 x2_timeline = plt.subplot2grid(
     (21, 12),
@@ -146,7 +146,7 @@ x2_timeline.axis([
 x2_timeline.set_ylabel('Theta_y')
 x2_timeline.set_xlabel('Seconds')
 x2_timeline.yaxis.set_label_position("right")
-x2_timeline.plot(data[:,0],data[:,13],'c-')
+x2_timeline.plot(data[:,0],data[:,13],'g-')
 
 cart_plot = plt.subplot2grid(
     (21, 12),

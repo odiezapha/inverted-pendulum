@@ -11,7 +11,6 @@ body {
     min-height: 10em;
     width: 50%;
 }
-.center {margin: 0 auto; width: 400px;}
 </style>
 
  <title>Trent's Inverted Pendulum Project</title>
@@ -37,21 +36,6 @@ to brush up on my EE skills I decided to embark on an effort to build the follow
 - LQR optimal control algorithm with quaternion based attitude specification<br>
 - brushless DC motors for reaction wheel torque<br>
 - battery powered electronics on PCB in small form factor<br>
-<br>
-While performing the initial research I realized there were a <i>few</i> more things I'd need
-to learn:<br>
-- physics simulation in software<br>
-- state space representation of equations<br>
-- optimal control theory<br>
-- motor selection<br>
-- brushless DC motor control<br>
-- C++ (or a least a major refresher)<br>
-- CAD design<br>
-- machining of parts<br>
-<br>
-With a strong will, open source software, access to research papers, and a friend with
-a machine shop I got started...</p>
-<br>
 
 <p><i>Controller Design</i></p>
 <p>I performed this part in two stages: (1) single rotation axis with euler angles and
@@ -66,6 +50,9 @@ the inverted pendulum and the one reaction wheel that stabilized it.
 </video>
 </div>
 <br>
+<div style="text-align: center"> 
+	<i>Figure 1: 1-axis stabilized inverted pendulum</i>
+</div>
 <br>
 The next stage was implementing 3-axis stabilization using quaternions and LQR controller.
 Particularly useful in [Yang 2010] was the reduction of number of quaternions from 4 
@@ -78,18 +65,11 @@ inverted pendulum recovering from an initial offset.
 </video>
 </div>
 <br>
-<br>
-See python code for parameter estimation used in the above simulation.
+<div style="text-align: center"> 
+	<i>Figure 2: Top down view of 2-axis stabilized inverted pendulum</i>
+</div>
 </p>
 <br>
-
-<p><i>Hardware Selection</i></p>
-<p>
-Motor:TBD<br>
-Motor Drive:TBD<br>
-Sensors:TBD<br>
-Microprocessor:TBD<br>
-Others<br>
-</p>
+<p>Stay tuned...</p>
 </body>
 </html>
