@@ -6,28 +6,6 @@ from numpy import matrix, array, zeros, identity
 import scipy.linalg
 import controlpy
 
-R = matrix([
-    [1,0,0],
-    [0,1,0],
-    [0,0,1]
-])
-
-
-Q = 500*identity(9)
-'''
-Q = matrix([
-    [1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 1]
-])
-'''
-
 ## General Constants
 Km = 0.07    # motor torque constant (Nm/A)
 Rm = 6.69    # motor internal resistance (Ohms)
@@ -52,34 +30,53 @@ Iz = 0.05    # pendulum MOI (kg*m^2)
 Bz = 0       # friction in pendulum bearing (Nms)
 Fspin_z = 1  # force spinning around rod axis, term needed for stability
 
+#state matrix for motion
 A = zeros((9,9))
 
+#quaternion derivative terms
 A[0:3,3:6] = 0.5*identity(3)
+#X and Y gravity terms and Z rotation
 A[3:6,0:3] = matrix([
     [2*g*lp*Mp/(Ix), 0, 0],
     [0, 2*g*lp*Mp/(Iy), 0],
     [0, 0, 2*g*Fspin_z/(Iz)]
 ])
+#friction in pendulum rotation on pendulum
 A[3:6,3:6] = matrix([
     [Bx/(Ix), 0, 0],
     [0, By/(Iy), 0],
     [0, 0, Bz/(Iz)]
 ])
+#friction in wheel rotation on pendulum
 A[3:6,6:9] = matrix([
     [-Bw/(Ix), 0, 0],
     [0, -Bw/(Iy), 0],
     [0, 0, -Bw/(Iz)]
 ])
+#friction in wheel rotation on wheel
 A[6:9,6:9] = -Bw/Iw*identity(3)
 
+#state matrix for control
 B = zeros((9,3))
 
+#control term impact on pendulum
 B[3:6,0:3] = matrix([
     [Km/(Ix)/Rm, 0, 0],
     [0, Km/(Iy)/Rm, 0],
     [0, 0, Km/(Iz)/Rm]
 ])
+#control term impact on wheel
 B[6:9,0:3] = Km/Iw/Rm*identity(3)
+
+# gain matrix for cost optimization
+R = matrix([
+    [1,0,0],
+    [0,1,0],
+    [0,0,1]
+])
+
+# gain matrix for effort optimization
+Q = 500*identity(9)
 
 #solve the Ricatti equation
 X = matrix(scipy.linalg.solve_continuous_are(A, B, Q, R))
@@ -146,9 +143,11 @@ class Pendulum(object):
         return x
 
     def control_x(self, u):
+        #use the x-axis K values and inputs, u, to calculuate control
         return float(-K[0]*matrix((u)).T)
 
     def control_y(self, u):
+        #use the y-axis K values and inputs, u, to calculuate control
         return float(-K[1]*(matrix(u)).T)
 
     def rk4_step(self, dt):
