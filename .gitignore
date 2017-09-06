@@ -1,3 +1,4 @@
 *.pyc
 sim/1-axis/img/*
 sim/2-axis/img/*
+.DS_store
