@@ -4,31 +4,35 @@ from math import sin, cos, pi
 import numpy as np
 from numpy import matrix, array, zeros, identity
 import scipy.linalg
-import controlpy
+import config_motor
+import config_wheel
+import config_pendulum
 
-## General Constants
-Km = 0.07    # motor torque constant (Nm/A)
-Rm = 6.69    # motor internal resistance (Ohms)
-Vsat = 22    # motor max voltage
-Iw = 0.03    # wheel MOI (kg*m^2)
-Bw = 0.001   # friction in wheel bearing (Nms)
+motor = config_motor.maxon_70w
+wheel = config_wheel.estimate
+pend = config_pendulum.estimate
+
+## Config ##
+Km = motor['Km']   # motor torque constant (Nm/A)
+Rm = motor['Rm']   # motor internal resistance (Ohms)
+Vsat = motor['Vsat']  # motor max voltage
+Iw = wheel['Iw']   # wheel MOI (kg*m^2)
+Bw = wheel['Bw']   # friction in wheel bearing (Nms)
+Mr = pend['Mr']    # mass of rod (kg)
+Yr = pend['Yr']    # normalized distance of rod along rod
+Mw = pend['Mw']    # mass of wheel (kg)
+Yw = pend['Yw']    # normalized distance of wheel along rod
+lp = pend['lp']    # length of pendulum (m)
+Ix = pend['Ix']    # pendulum MOI (kg*m^2)
+Bx = pend['Bx']    # friction in pendulum bearing (Nms)
+Iy = pend['Iy']    # pendulum MOI (kg*m^2)
+By = pend['By']    # friction in pendulum bearing (Nms)
+Iz = pend['Iz']    # pendulum MOI (kg*m^2)
+Bz = pend['Bz']    # friction in pendulum bearing (Nms)
+Fspin_z = pend['Fspin_z']  # force spinning around rod axis, term needed for stability
+
+Mp = Mw*Yw + Mr*Yr #pendulum's weighted mass
 g = -9.81    # gravity (m/s^2)
-Mr = 0.2     # mass of rod (kg)
-Yr = 0.5     # normalized distance of rod along rod
-Mw = 0.8     # mass of wheel (kg)
-Yw = 1       # normalized distance of wheel along rod
-lp = 0.33    # length of pendulum (m)
-Mp = Mw*Yw + Mr*Yr
-## X-axis Constants
-Ix = 0.05    # pendulum MOI (kg*m^2)
-Bx = 0       # friction in pendulum bearing (Nms)
-## Y-axis Constants
-Iy = 0.05    # pendulum MOI (kg*m^2)
-By = 0       # friction in pendulum bearing (Nms)
-## Z-axis Constants
-Iz = 0.05    # pendulum MOI (kg*m^2)
-Bz = 0       # friction in pendulum bearing (Nms)
-Fspin_z = 1  # force spinning around rod axis, term needed for stability
 
 #state matrix for motion
 A = zeros((9,9))
