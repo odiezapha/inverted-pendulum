@@ -1,0 +1,103 @@
+PCBNEW-LibModule-V1  
+# encoding utf-8
+Units mm
+$INDEX
+BAT_1048
+$EndINDEX
+$MODULE BAT_1048
+Po 0 0 0 15 00000000 00000000 ~~
+Li BAT_1048
+Cd 
+Sc 00000000
+At STD
+Op 0 0 0
+.SolderMask 0
+.SolderPaste 0
+T0 -35.4614 -20.6358 1.00004 1.00004 0 0.05 N V 21 "BAT_1048"
+T1 -131.015 -32.6824 1.00145 1.00145 0 0.05 N V 21 "VAL**"
+DS -38.55 -19.89 38.55 -19.89 0.127 21
+DS 38.55 -19.89 38.55 19.89 0.127 24
+DS 38.55 19.89 -38.55 19.89 0.127 21
+DS -38.55 19.89 -38.55 -19.89 0.127 24
+DS 38.1 0 -38.1 0 0.127 21
+DS -30 -16 -30 -6 0.127 21
+DS -30 -6 32 -6 0.127 21
+DS 32 -6 32 -16 0.127 21
+DS 32 -16 -30 -16 0.127 21
+DS -30 4 -30 14 0.127 21
+DS -30 14 32 14 0.127 21
+DS 32 14 32 4 0.127 21
+DS 32 4 -30 4 0.127 21
+$PAD
+Sh "C1+" R 7.45 6.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -39.33 -9.555
+$EndPAD
+$PAD
+Sh "C1-" R 7.45 6.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 39.33 -9.555
+$EndPAD
+$PAD
+Sh "C2-" R 7.45 6.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po -39.33 9.555
+$EndPAD
+$PAD
+Sh "C2+" R 7.45 6.45 0 0 0
+At SMD N 00888000
+.SolderMask 0
+.SolderPaste 0
+Ne 0 ""
+Po 39.33 9.555
+$EndPAD
+$PAD
+Sh "P$1" C 4.186 4.186 0 0 0
+Dr 3.17 0 0
+At STD N 00E0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 27.6 0
+$EndPAD
+$PAD
+Sh "P$2" C 4.186 4.186 0 0 0
+Dr 3.17 0 0
+At STD N 00E0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -27.6 0
+$EndPAD
+$PAD
+Sh "P$3" C 4.466 4.466 0 0 0
+Dr 3.45 0 0
+At STD N 00E0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -27.6 17.505
+$EndPAD
+$PAD
+Sh "P$4" C 4.466 4.466 0 0 0
+Dr 3.45 0 0
+At STD N 00E0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 27.6 -17.505
+$EndPAD
+$PAD
+Sh "P$5" C 3.406 3.406 0 0 0
+Dr 2.39 0 0
+At STD N 00E0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 35.82 17.505
+$EndPAD
+$EndMODULE BAT_1048
