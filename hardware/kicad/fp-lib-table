@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name pendulum_control_board)(type Legacy)(uri /home/trent/documents/kicad/pendulum_control/pendulum_control_board.mod)(options "")(descr ""))
+)
