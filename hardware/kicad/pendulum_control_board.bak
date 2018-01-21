@@ -4211,7 +4211,7 @@ Text Label 19900 15850 0    65   ~ 0
 BRAKE_X
 Text Label 33700 18850 0    65   ~ 0
 BRAKE_Y
-Text Label 19900 13450 0    65   ~ 0
+Text Label 19900 13550 0    65   ~ 0
 BRAKE_Y
 Text Label 4400 27950 0    65   ~ 0
 CB1
@@ -4241,7 +4241,7 @@ Text Label 27200 8534 2    65   ~ 0
 CLK
 Text Label 29500 10750 0    65   ~ 0
 CLK
-Text Label 20400 13850 0    65   ~ 0
+Text Label 19900 16150 0    65   ~ 0
 CLK
 Text Label 12200 22950 0    65   ~ 0
 CLK
@@ -4259,19 +4259,19 @@ Text Label 13100 16650 0    65   ~ 0
 CSOP
 Text Label 27200 8234 2    65   ~ 0
 CS_ACCEL
-Text Label 19900 15050 0    65   ~ 0
+Text Label 20400 13850 0    65   ~ 0
 CS_ACCEL
 Text Label 19900 14150 0    65   ~ 0
 CS_BATT
 Text Label 12200 22850 0    65   ~ 0
 CS_BATT
-Text Label 19900 15150 0    65   ~ 0
+Text Label 19900 16050 0    65   ~ 0
 CS_GYRO
 Text Label 29500 11050 0    65   ~ 0
 CS_GYRO
 Text Label 27100 10950 0    65   ~ 0
 DEN_GYRO
-Text Label 19900 15250 0    65   ~ 0
+Text Label 19900 15050 0    65   ~ 0
 DEN_GYRO
 Text Label 3300 9950 0    65   ~ 0
 DM
@@ -4281,7 +4281,7 @@ Text Label 3700 9850 0    65   ~ 0
 DP
 Text Label 13700 9650 0    65   ~ 0
 DP
-Text Label 19900 16050 0    65   ~ 0
+Text Label 19900 15250 0    65   ~ 0
 DRDY/INT2_GYRO
 Text Label 26800 11150 0    65   ~ 0
 DRDY/INT2_GYRO
@@ -4313,7 +4313,7 @@ Text Label 19900 15950 0    65   ~ 0
 FWD/REV_X
 Text Label 33700 18950 0    65   ~ 0
 FWD/REV_Y
-Text Label 19900 13550 0    65   ~ 0
+Text Label 19900 13450 0    65   ~ 0
 FWD/REV_Y
 Text Label 33800 14050 0    65   ~ 0
 HALL1_X
@@ -4345,7 +4345,7 @@ Text Label 19900 13650 0    65   ~ 0
 INT1_ACCEL
 Text Label 27100 11050 0    65   ~ 0
 INT1_GRYO
-Text Label 19900 16150 0    65   ~ 0
+Text Label 19900 15150 0    65   ~ 0
 INT1_GRYO
 Text Label 29600 8750 0    65   ~ 0
 INT2_ACCEL
@@ -4439,7 +4439,7 @@ Text Label 6500 20650 0    65   ~ 0
 SDA
 Text Label 19000 18650 0    65   ~ 0
 SW1
-Text Label 19900 16450 0    65   ~ 0
+Text Label 19900 16350 0    65   ~ 0
 SW1
 Text Label 21800 18650 0    65   ~ 0
 SW_LED_GH_RL
@@ -4447,7 +4447,7 @@ Text Label 19900 16250 0    65   ~ 0
 SW_LED_GH_RL
 Text Label 23200 18750 0    65   ~ 0
 SW_LED_RH_GL
-Text Label 19900 16350 0    65   ~ 0
+Text Label 19900 16450 0    65   ~ 0
 SW_LED_RH_GL
 Text Label 33700 14650 0    65   ~ 0
 TACHO_X
