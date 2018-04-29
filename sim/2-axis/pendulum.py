@@ -209,6 +209,15 @@ class Sim():
         plt.grid()
         plt.show()
 
+    def plot_parametric(self, ts_data):
+        plt.plot(ts_data[:, 3], ts_data[:, 0], 'b', label='q0, wheel-x')
+        plt.plot(ts_data[:, 4], ts_data[:, 1], 'g', label='q1, wheel-y')
+        plt.legend(loc='best')
+        plt.xlabel('wheel speed')
+        plt.ylabel('pendulum angle')
+        plt.grid()
+        plt.show()
+
 def main():
 
     # Set configuration
@@ -229,14 +238,14 @@ def main():
     # C.print_eigs(A, B, K)
 
     # Set up simulation
-    duration = 30 # sec
+    duration = 15 # sec
     time_step = 0.01 # sec
     sys_init = [
-            0.03, # q0
+            -0.08, # q0
             0.04, # q1
             0.,
             0.1, # w_x
-            0.5, # w_y
+            -0.3, # w_y
             0.,
             0.,
             0.,
@@ -247,6 +256,7 @@ def main():
     ts_data, t = S.gen_data(sys_init, time_step, duration)
 
     S.plot_timeseries(ts_data, t)
+    S.plot_parametric(ts_data)
 
     return
 
