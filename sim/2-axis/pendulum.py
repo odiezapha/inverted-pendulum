@@ -121,15 +121,18 @@ class Controller():
 
         return K
 
-    def print_eigs(self, A, B, K):
-        """Return Eigenvalues and Eigenvalues"""
+    def print_eigs(self, A, B, K, vals = 1, vecs = 0):
+        """Return Eigenvalues and Eigenvalues of controllability matrix"""
 
         # compute the Eigenvalues and Eigenvectors
         eigVals, eigVecs = scipy.linalg.eig(A-B*K)
-        print("Eigen Values: ")
-        print(eigVals)
-        print("Eigen Vectors: ")
-        print(eigVecs)
+
+        if vals == 1:
+            print("Eigen Values: ")
+            print(eigVals)
+        if vecs == 1:
+            print("Eigen Vectors: ")
+            print(eigVecs)
 
 
 class Sim:
