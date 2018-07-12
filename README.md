@@ -3,7 +3,7 @@ An inverted pendulum that maintains an upright attitude via reaction wheels. Thi
 contains hardware and software development files. See the pdf for system equations.
 
 Renderings:<br />
-<img src="sim/images/system_angle.png" width="375px"/> <img src="sim/images/system_top.png" width ="375px"/>
+<img src="sim/images/system_angle.png" width="400px"/> <img src="sim/images/system_top.png" width ="400px"/>
 
 Simulation output:<br />
 ![alt text](sim/images/time_series_default.png)<br />
