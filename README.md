@@ -3,10 +3,10 @@ An inverted pendulum that maintains an upright attitude via reaction wheels. Thi
 contains hardware and software development files. See the pdf for system equations.
 
 Renderings:
-![alt text](images/system_angle.png) | ![alt text](images/system_top.png)
+![alt text](sim/images/system_angle.png) | ![alt text](sim/images/system_top.png)
 
 Simulation output:
-![alt text](images/time_series_default.png) | ![alt text](images/parametric_default.png)
+![alt text](sim/images/time_series_default.png) | ![alt text](sim/images/parametric_default.png)
 
 **Sim Test Conditions**<br />
 Software: Python 3.6.4 on macOS High Sierra<br />
