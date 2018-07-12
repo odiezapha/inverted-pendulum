@@ -1,14 +1,16 @@
-# inverted-pendulum
+# Reaction Wheel Stabilized Inverted Pendulum
+An inverted pendulum that maintains an upright attitude via reaction wheels. This repository
+contains hardware and software development files. See the pdf for system equations.
 
-Tracking my efforts to develop a reaction wheel stabilized inverted pendulum.
+Renderings:<br />
+<img src="sim/images/system_angle.png" width="400px"/> <img src="sim/images/system_top.png" width ="400px"/>
 
-* Quaternion-based 2-axis attitude control
-* Linear Quadratic Regulartor optimal controller
-* Brushless DC motors
-* Custom reaction wheels machined from brass or stainless
-* Micro-based control utilizing FPU
-* Custom PCB with on-board power
-* USB-Type C interface for power and communication
+Simulation output:<br />
+![alt text](sim/images/time_series_default.png)<br />
+![alt text](sim/images/parametric_default.png)
 
-
-See write up here: https://trentfehl.github.io/inverted-pendulum/
+**Sim Test Conditions**<br />
+Software: Python 3.6.4 on macOS High Sierra<br />
+Computer: MacBook (Retina, 12-inch, Early 2015)<br />
+Processor: 1.1 GHz Intel Core M<br />
+RAM: 8 GB 1600 MHz DDR3<br />
