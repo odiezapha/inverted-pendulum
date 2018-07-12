@@ -198,7 +198,8 @@ class Sim:
         plt.plot(t, ts_data[:, 0], 'b', label='q0(t)')
         plt.plot(t, ts_data[:, 1], 'g', label='q1(t)')
         plt.legend(loc='best')
-        plt.xlabel('t')
+        plt.xlabel('t (sec)')
+        plt.ylabel('pendulum angle')
         plt.grid()
         plt.show()
 
@@ -206,7 +207,7 @@ class Sim:
         plt.plot(ts_data[:, 3], ts_data[:, 0], 'b', label='q0, wheel-x')
         plt.plot(ts_data[:, 4], ts_data[:, 1], 'g', label='q1, wheel-y')
         plt.legend(loc='best')
-        plt.xlabel('wheel speed')
+        plt.xlabel('wheel speed (rad/sec)')
         plt.ylabel('pendulum angle')
         plt.grid()
         plt.show()
@@ -230,7 +231,7 @@ def main():
     Q = C.get_effort_matrix(gains = [800, 800, 800, 800, 800, 800, 1, 1, 1])
 
     # Get LQR controller gains
-    K = C.get_k_gain(A, B, Q, R)
+    K = C.get_k_gain(A, B, Q, R, output=1)
 
     # Set up simulation
     duration = 15 # sec
